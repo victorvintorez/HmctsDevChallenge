@@ -16,6 +16,8 @@
 		<Configurations>Debug;Release;Test</Configurations>
 
 		<Platforms>AnyCPU</Platforms>
+
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -50,6 +52,12 @@
 		<ProjectReference Include="../HmctsDevChallenge.Frontend/HmctsDevChallenge.Frontend.esproj">
 			<ReferenceOutputAssembly>false</ReferenceOutputAssembly>
 		</ProjectReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Include="..\.dockerignore">
+			<Link>.dockerignore</Link>
+		</Content>
 	</ItemGroup>
 
 	<Target Name="CreateWwwRootFolder" AfterTargets="AfterBuild">

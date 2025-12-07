@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="victorvintorez@80.6.237.74:6087 password">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/.run" web="/" />
+            <mapping local="$PROJECT_DIR$/.idea/.idea.HmctsDevChallenge/.idea/queries" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="victorvintorez@80.6.237.74:6087 password (2)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$/.run" web="/" />
+            <mapping local="$PROJECT_DIR$/.idea/.idea.HmctsDevChallenge/.idea/queries" web="/" />
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

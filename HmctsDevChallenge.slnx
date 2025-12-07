@@ -1,0 +1,13 @@
+<Solution>
+	<Configurations>
+		<BuildType Name="Debug"/>
+		<BuildType Name="Release"/>
+		<BuildType Name="Test"/>
+	</Configurations>
+	<Project Path="HmctsDevChallenge.Backend.Test/HmctsDevChallenge.Backend.Test.csproj"/>
+	<Project Path="HmctsDevChallenge.Backend/HmctsDevChallenge.Backend.csproj"/>
+	<Project Path="HmctsDevChallenge.Frontend/HmctsDevChallenge.Frontend.esproj">
+		<BuildType Solution="Release|*" Project="Debug"/>
+		<Build/>
+	</Project>
+</Solution>

@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: hmcts_postgres
+    restart: unless-stopped
+    # Read container environment from a .env file in the repo root
+    env_file:
+      - .env
+    # Explicit environment mappings (use values from .env, with defaults)
+    environment:
+      POSTGRES_USER: "${POSTGRES_USER:-hmcts}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-hmcts_password}"
+      POSTGRES_DB: "${POSTGRES_DB:-hmctsdb}"
+    ports:
+      - "${POSTGRES_PORT:-5432}:${POSTGRES_PORT:-5432}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB} || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:

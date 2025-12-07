@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.4110890">
+	<PropertyGroup>
+		<StartupCommand>pnpm run dev</StartupCommand>
+		<ShouldRunNpmInstall>false</ShouldRunNpmInstall>
+		<ShouldRunBuildScript>false</ShouldRunBuildScript>
+		<BuildOutputFolder>$(MSBuildProjectDirectory)</BuildOutputFolder>
+		<Configurations>Debug;Test</Configurations>
+		<Platforms>AnyCPU</Platforms>
+	</PropertyGroup>
+	<ItemGroup>
+		<TypeScriptConfiguration Remove="LicenceManager.Web/tsconfig.json"/>
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="src/api/"/>
+		<Folder Include="src/assets/"/>
+		<Folder Include="src/components/"/>
+		<Folder Include="src/routes/"/>
+		<Folder Include="src/types/"/>
+	</ItemGroup>
+
+</Project>

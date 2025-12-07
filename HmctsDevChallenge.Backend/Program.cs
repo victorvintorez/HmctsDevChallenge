@@ -73,6 +73,9 @@ builder.Services.AddControllers()
         opts.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
     });
 
+// Health Check
+builder.Services.AddHealthChecks();
+
 // OpenAPI Document Generation
 builder.Services.AddOpenApi(opts =>
 {
@@ -112,6 +115,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseCors();
+
+// Map Health Check Endpoint
+app.MapHealthChecks("/api/health");
 
 // Map OpenAPI + OpenAPI Viewer (Scalar)
 app.MapOpenApi("/api/openapi/{documentName}.json")

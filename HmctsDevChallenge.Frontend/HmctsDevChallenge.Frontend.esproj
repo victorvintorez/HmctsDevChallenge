@@ -1,9 +1,11 @@
 <Project Sdk="Microsoft.VisualStudio.JavaScript.Sdk/1.0.4110890">
 	<PropertyGroup>
 		<StartupCommand>pnpm run dev</StartupCommand>
+		<JavaScriptTestFramework>none</JavaScriptTestFramework>
 		<ShouldRunNpmInstall>false</ShouldRunNpmInstall>
-		<ShouldRunBuildScript>false</ShouldRunBuildScript>
-		<BuildOutputFolder>$(MSBuildProjectDirectory)</BuildOutputFolder>
+		<ShouldRunBuildScript>true</ShouldRunBuildScript>
+		<BuildCommand>pnpm run build</BuildCommand>
+		<BuildOutputFolder>$(MSBuildProjectDirectory)/dist</BuildOutputFolder>
 		<Configurations>Debug;Test</Configurations>
 		<Platforms>AnyCPU</Platforms>
 	</PropertyGroup>
@@ -18,4 +20,7 @@
 		<Folder Include="src/types/"/>
 	</ItemGroup>
 
+	<Target Name="PnpmInstall" BeforeTargets="BeforeRestore">
+		<Exec Command="pnpm install --frozen-lockfile" WorkingDirectory="$(MSBuildProjectDirectory)"/>
+	</Target>
 </Project>

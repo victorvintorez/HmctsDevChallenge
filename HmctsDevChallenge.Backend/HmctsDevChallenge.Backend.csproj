@@ -71,7 +71,7 @@
 		<ItemGroup>
 			<ClientBuildFiles Include="../HmctsDevChallenge.Frontend/dist/**/*.*"/>
 		</ItemGroup>
-		<Copy SourceFiles="@(ClientBuildFiles)" DestinationFolder="@(ClientBuildFiles -> '$(PublishDir)wwwroot/%(RecursiveDir)%(Filename)%(Extension)')"/>
+		<Copy SourceFiles="@(ClientBuildFiles)" DestinationFiles="@(ClientBuildFiles -> '$(PublishDir)wwwroot/%(RecursiveDir)%(Filename)%(Extension)')"/>
 	</Target>
 
 </Project>
